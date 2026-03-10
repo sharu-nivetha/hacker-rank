@@ -1,0 +1,17 @@
+import re
+
+def is_valid_float():
+    n = int(input())
+    for _ in range(n):
+        s = input()
+        try:
+            if '.' in s and s[-1] != '.':
+                float(s)
+                print(True)
+            else:
+                print(False)
+        except ValueError:
+            print(False)
+
+is_valid_float()
+
