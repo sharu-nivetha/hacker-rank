@@ -1,0 +1,4 @@
+import numpy
+poly_coeffs = numpy.array(input().split(), float)
+x = float(input())
+print(numpy.polyval(poly_coeffs, x))
