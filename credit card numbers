@@ -1,0 +1,19 @@
+import re
+import sys
+
+def validate_credit_card(card):
+    structure_pattern = r"^[456]\d{3}(-?\d{4}){3}$"
+    if not re.match(structure_pattern, card):
+        return "Invalid"
+    raw_number = card.replace("-", "")
+    if re.search(r"(\d)\1{3,}", raw_number):
+        return "Invalid"
+    return "Valid"
+if __name__ == "__main__":
+    input_data = sys.stdin.read().splitlines()
+    if input_data:
+        n = int(input_data[0])
+        for i in range(1, n + 1):
+            print(validate_credit_card(input_data[i]))
+
+
