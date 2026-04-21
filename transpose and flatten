@@ -1,0 +1,10 @@
+import numpy
+n, m = map(int, input().split())
+storage = []
+for _ in range(n):
+    row = list(map(int, input().split()))
+    storage.append(row)
+
+my_array = numpy.array(storage)
+print(numpy.transpose(my_array))
+print(my_array.flatten())
